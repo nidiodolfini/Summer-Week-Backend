@@ -1,0 +1,5 @@
+com\dh\BibliotecaDeFilmes\BibliotecaDeFilmesApplication.class
+com\dh\BibliotecaDeFilmes\repository\FilmeRepository.class
+com\dh\BibliotecaDeFilmes\controller\FilmeController.class
+com\dh\BibliotecaDeFilmes\service\FilmeService.class
+com\dh\BibliotecaDeFilmes\model\Filme.class
