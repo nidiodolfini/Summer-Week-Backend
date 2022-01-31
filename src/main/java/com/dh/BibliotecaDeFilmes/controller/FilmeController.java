@@ -9,24 +9,30 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/filme")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class FilmeController {
 
     @Autowired
     private FilmeService service;
 
     @PostMapping
-    public Filme post(Filme filme){
+    public Filme post(@RequestBody Filme filme){
+        return service.create(filme);
+    }
+
+    @PutMapping
+    public Filme put(@RequestBody Filme filme){
         return service.create(filme);
     }
 
     @DeleteMapping("/{id}")
-    public String post(@RequestBody Integer id){
+    public String post(@PathVariable Integer id){
         service.delete(id);
         return "Filme deletado com sucesso";
     }
 
     @GetMapping("/{id}")
-    public Filme selectById(@RequestBody Integer id){
+    public Filme selectById(@PathVariable Integer id){
         return service.selectById(id);
     }
 
