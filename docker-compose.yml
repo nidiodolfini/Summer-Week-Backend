@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  springweb:
+    container_name: dockerback
+    build: .
+    ports:
+      - "8081:8080"
+    networks:
+      - servers
+#    depends_on:
+#      - mysql_db
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  mysql_db:
+    image: "mysql:8.0"
+    container_name: mysqlserver
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: filmes
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: r00tM)DT!
+      MYSQL_ROOT_PASSWORD: r00tM)DT!
+    volumes:
+      - db_mysql:/var/lib/mysql
+    networks:
+      - servers
+
+volumes:
+  db_mysql:
+
+networks:
+  servers:
+    driver: bridge
