@@ -1,3 +1,4 @@
+# está puxando a imagem do dockerhub
 FROM openjdk:17-jdk-alpine3.14
 WORKDIR /diretorioprincipal
 EXPOSE 8080
