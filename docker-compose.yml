@@ -17,33 +17,25 @@ services:
       - servers
 ##fim do mysql
 
+  #outro container --- backend
+  springweb:
+    container_name: dockerback
+    build: . #preciso do Dockerfile para gerar a imagem
+    ports:
+    - "8081:8080"
+    networks:
+      - servers
+    depends_on:
+      - mysql_db
+    environment:
+       - SPRING_PROFILES_ACTIVE=docker
+
 volumes:
   db_mysql:
 
 networks:
   servers:
     driver: bridge
-
-
-
-
-#  #outro container --- backend
-#  springweb:
-#    container_name: dockerback
-#    build: . #preciso do Dockerfile para gerar a imagem
-#    ports:
-#    - "8081:8080"
-#    networks:
-#      - servers
-#    depends_on:
-#      - mysql_db
-#    environment:
-#       - SPRING_PROFILES_ACTIVE=docker
-
-
-
-
-
 
 
 
