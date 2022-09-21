@@ -1,0 +1,43 @@
+version: "3.7"
+services:
+  #dados para crição do container do mysql
+  mysql_db:
+    image: "mysql:8.0" #imagem vem do dockerhub, equivale ao from
+    container_name: mysqlserver #nomeando container
+    ports: # redirecionando as portas
+      - "3307:3306" # primeira meu pc e seunda porta container
+    environment: #variaveis de ambientes do mysql
+      MYSQL_DATABASE: filmes
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: r00tM)DT!
+      MYSQL_ROOT_PASSWORD: r00tM)DT!
+    volumes: #meu hd externo para o container
+      - db_mysql:/var/lib/mysql
+    networks: # uma rede entre os container
+      - servers
+##fim do mysql
+
+  #outro container --- backend
+  springweb:
+    container_name: dockerback
+    build: . #preciso do Dockerfile para gerar a imagem
+    image: "nidio/backend"
+    ports:
+    - "8081:8080"
+    networks:
+      - servers
+    depends_on:
+      - mysql_db
+    environment:
+       - SPRING_PROFILES_ACTIVE=docker
+
+volumes:
+  db_mysql:
+
+networks:
+  servers:
+    driver: bridge
+
+
+
+#docker-compose up -d
