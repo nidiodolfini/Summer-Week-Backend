@@ -21,6 +21,7 @@ services:
   springweb:
     container_name: dockerback
     build: . #preciso do Dockerfile para gerar a imagem
+    image: "nidio/backend"
     ports:
     - "8081:8080"
     networks:
@@ -39,3 +40,4 @@ networks:
 
 
 
+#docker-compose up -d

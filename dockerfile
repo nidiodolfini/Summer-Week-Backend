@@ -1,6 +1,5 @@
-# está puxando a imagem do dockerhub
 FROM openjdk:17-jdk-alpine3.14
-WORKDIR /diretorioprincipal
+WORKDIR /app
 EXPOSE 8080
-COPY target/BibliotecaDeFilmes-0.0.1-SNAPSHOT.jar /diretorioprincipal/app.jar
+COPY target/BibliotecaDeFilmes-0.0.1-SNAPSHOT.jar /app/app.jar
 ENTRYPOINT ["java","-jar", "app.jar"]
