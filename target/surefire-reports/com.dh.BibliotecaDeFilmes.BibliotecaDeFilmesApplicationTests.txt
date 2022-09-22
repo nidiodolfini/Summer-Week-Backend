@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.dh.BibliotecaDeFilmes.BibliotecaDeFilmesApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.24 s - in com.dh.BibliotecaDeFilmes.BibliotecaDeFilmesApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.915 s - in com.dh.BibliotecaDeFilmes.BibliotecaDeFilmesApplicationTests
