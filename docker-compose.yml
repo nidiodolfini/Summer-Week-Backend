@@ -15,21 +15,20 @@ services:
       - db_mysql:/var/lib/mysql
     networks: # uma rede entre os container
       - servers
-##fim do mysql
+  ##fim do mysql
 
   #outro container --- backend
   springweb:
     container_name: dockerback
     build: . #preciso do Dockerfile para gerar a imagem
-    image: "nidio/backend"
     ports:
-    - "8081:8080"
+      - "8081:8080"
     networks:
       - servers
     depends_on:
       - mysql_db
     environment:
-       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=docker
 
 volumes:
   db_mysql:
@@ -37,7 +36,3 @@ volumes:
 networks:
   servers:
     driver: bridge
-
-
-
-#docker-compose up -d
