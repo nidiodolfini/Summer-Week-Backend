@@ -17,7 +17,6 @@ services:
       - servers
   ##fim do mysql
 
-
 volumes:
   db_mysql:
 
