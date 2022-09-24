@@ -1,0 +1,31 @@
+spring:
+  config:
+    activate:
+      on-profile: aws
+  datasource:
+    url: jdbc:mysql://13.57.19.64:3306/filmes
+    username: root
+    password: r00tM)DT!
+    initialize: false
+    initialSize: 0
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 5000
+    minIdle: 0
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        hbm2ddl:
+          auto: none
+        temp:
+          use_jdbc_metadata_defaults: false
+  sql:
+    init:
+      continue-on-error: true
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
