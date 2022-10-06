@@ -1,11 +1,11 @@
 version: "3.7"
 services:
   #dados para crição do container do mysql
-  mysql_db:
+  mysql_dbni:
     image: "mysql:8.0" #imagem vem do dockerhub, equivale ao from
-    container_name: mysqlserver #nomeando container
+    container_name: mysqlservernidio #nomeando container
     ports: # redirecionando as portas
-      - "3307:3306" # primeira meu pc e seunda porta container
+      - "3308:3306" # primeira meu pc e seunda porta container
     environment: #variaveis de ambientes do mysql
       MYSQL_DATABASE: filmes
       MYSQL_USER: admin

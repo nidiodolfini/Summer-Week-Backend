@@ -2,10 +2,10 @@ version: "3.7"
 services:
   #outro container --- backend
   springweb:
-    container_name: dockerback
+    container_name: dockerbacknidio
     build: . #preciso do Dockerfile para gerar a imagem
     ports:
-      - "8081:8080"
+      - "8082:8080"
     networks:
       - servers
     environment:

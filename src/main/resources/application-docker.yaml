@@ -3,7 +3,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:mysql://mysql_db:3306/filmes
+    url: jdbc:mysql://mysql_dbni:3306/filmes
     username: root
     password: r00tM)DT!
     initialize: false
